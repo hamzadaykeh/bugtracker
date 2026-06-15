@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# 🐛 BugTracker — Bug Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack bug tracking system built with **ReactJS** and **PHP (OOP)** with MySQL database.
 
-## Available Scripts
+## 👥 Modules
+- **Admin** — Manage staff, projects, bugs, assignments and messages
+- **Staff** — View assigned bugs, update status, message customers
+- **Customer** — Report bugs, track status using ticket number
 
-In the project directory, you can run:
+## 🛠️ Tech Stack
+| Layer | Technology |
+|-------|-----------|
+| Frontend | ReactJS, Bootstrap, Tabler Icons |
+| Backend | PHP (OOP), MySQL |
+| Server | XAMPP (Apache + MySQL) |
 
-### `npm start`
+## 🚀 How to Run
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Clone the project
+```bash
+git clone https://github.com/hamzadaykeh/bugtracker.git
+cd bugtracker
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Setup Database
+- Open XAMPP → Start **Apache** and **MySQL**
+- Go to `http://localhost/phpmyadmin`
+- Create database named `bugtracker_db`
+- Run the SQL from `backend/database.sql`
 
-### `npm test`
+### 3. Setup Backend
+- Copy the `backend` folder to:
+C:\xampp\htdocs\bugtracker\backend
+### 4. Setup Frontend
+```bash
+cd frontend
+npm install
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 5. Open the app
+http://localhost:3000
+## 🔑 Default Login
+| Role | Username | Password |
+|------|----------|----------|
+| Admin | `admin` | `password` |
+| Staff | Create via Admin panel | — |
+| Customer | Register at `/register` | — |
 
-### `npm run build`
+## 📁 Project Structure
+bugtracker/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+├── backend/          ← PHP API files
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+│   ├── config.php
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+│   ├── auth.php
 
-### `npm run eject`
+│   ├── bugs.php
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+│   ├── users.php
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+│   ├── projects.php
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+│   └── upload.php
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+└── frontend/         ← React App
 
-## Learn More
+└── src/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+├── pages/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+│   ├── admin/
 
-### Code Splitting
+│   ├── staff/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+│   └── customer/
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+└── components/
+## ✨ Features
+- ✅ Role-based login (Admin, Staff, Customer)
+- ✅ Bug reporting with screenshot upload
+- ✅ Ticket number generation
+- ✅ Bug assignment to staff
+- ✅ Real-time case flow tracking
+- ✅ Messaging between admin, staff and customer
+- ✅ Status updates (open, assigned, in progress, resolved, closed)
